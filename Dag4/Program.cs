@@ -16,6 +16,8 @@ namespace Dag4
             Console.WriteLine(RevertWordsOrder("hallo hallo1- hallo2, hallo3."));
             Console.WriteLine(HowManyOccurrences("do it now", "do"));
             Console.WriteLine(HowManyOccurrences("empty", "d"));
+            CompressString("kkkktttrrrrrrrrrr");
+
 
             Console.ReadLine();
 
@@ -82,6 +84,40 @@ namespace Dag4
                 }
             }
             return numberOfTimes;
+        }
+
+        static void CompressString(string text)
+        {
+            char[] chars = text.ToCharArray();
+            Console.WriteLine("hey " + chars[1]);
+            int times = 0;
+            string word = string.Empty;
+            int chaLength = chars.Length;
+
+            for (int i = 0; i != chaLength; i++)
+            {
+                if (i == chaLength - 1)
+                {
+                        if (chars[i] == chars[chaLength - 1])
+                        {
+                            times++;
+                            word = word + chars[i] + (times + 1);
+                            times = 0;
+                        }
+                    break;
+                }
+                if (chars[i] == chars[i + 1])
+                {
+                        times++;
+                }
+                else
+                {
+                    word = word + chars[i] + (times + 1);
+                    times = 0;
+                }
+                Console.WriteLine(i != chaLength - 1);
+            }
+            Console.WriteLine(word);
         }
     }
 } 
