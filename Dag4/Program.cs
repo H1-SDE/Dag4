@@ -14,6 +14,8 @@ namespace Dag4
             Console.WriteLine(IsPalindrome("hallo"));
             Console.WriteLine(StringInReverseOrder("hallo"));
             Console.WriteLine(RevertWordsOrder("hallo hallo1- hallo2, hallo3."));
+            Console.WriteLine(HowManyOccurrences("do it now", "do"));
+            Console.WriteLine(HowManyOccurrences("empty", "d"));
 
             Console.ReadLine();
 
@@ -67,5 +69,19 @@ namespace Dag4
             }
             return reverseString;
         }
+
+        static int HowManyOccurrences(string words, string word2)
+        {
+            string[] halfReverseString = words.Split(' ');
+            int numberOfTimes = 0;
+            foreach (var word in halfReverseString)
+            {
+                if(word == word2)
+                {
+                    numberOfTimes++;
+                }
+            }
+            return numberOfTimes;
+        }
     }
-}
+} 
