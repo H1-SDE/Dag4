@@ -10,6 +10,11 @@ namespace Dag4
     {
         static void Main(string[] args)
         {
+            string a = "hello world";
+            {
+                Console.WriteLine("Length: " + a.Length);
+                Console.Read();
+            }
         }
     }
 }
