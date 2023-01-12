@@ -13,6 +13,7 @@ namespace Dag4
             Console.WriteLine(AddSeparator("didjdiojwo", "-"));
             Console.WriteLine(IsPalindrome("hallo"));
             Console.WriteLine(StringInReverseOrder("hallo"));
+            Console.WriteLine(RevertWordsOrder("hallo hallo1- hallo2, hallo3."));
 
             Console.ReadLine();
 
@@ -58,7 +59,13 @@ namespace Dag4
 
         static string RevertWordsOrder(string word)
         {
-
+            string[] halfReverseString = word.Split(' ');
+            string reverseString = string.Empty;
+            foreach (var word1 in halfReverseString)
+            {
+                reverseString = word1 + " " + reverseString;
+            }
+            return reverseString;
         }
     }
 }
